@@ -18,8 +18,34 @@
 *       pairs() returns []
 ****************************************************************/
 function pairs(names) {
-  // Your code goes here
-}
+  if (names === undefined || names.length < 1){
+    return [];
+  }
+  let groups = names.length /2;
+    if (names.length % 2 !== 0) {
+      groups = Math.ceil(groups);
+    } 
+
+    let grps = [];
+    for (let index = 0; index < groups; index++){
+      let pair1 = names.getRandom();
+      if (names.length < 1){
+        let duo = [pair1]
+        grps.push(duo)
+      }
+      else {let pair2 = names.getRandom();
+        let duo = [pair1, pair2];
+        grps.push(duo)
+      }
+      console.log(pair1)
+   }
+    return grps;
+  }
+  
+  const nams = ['barak', 'nada', 'majed', 'hussain', 'sara']
+  // console.log (pairs(nams))
+  
+  // console.log(pair1)
 
 module.exports = pairs;
 
